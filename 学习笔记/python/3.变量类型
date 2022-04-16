@@ -1,0 +1,12 @@
+# 变量类型
+    numbers # 数字
+    string # 字符串
+    list # 列表
+    tuple # 元组
+    dictionary # 字典
+    set # 集合
+
+# 删除变量
+    del x
+    del x[a] 删除列表的第a个值
+    del x[:]
