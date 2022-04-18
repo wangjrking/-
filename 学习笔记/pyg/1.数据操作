@@ -1,0 +1,19 @@
+import torch
+from torch_geometric.data import Data
+
+edge_index = torch.tensor([[0, 1, 1, 2],
+                           [1, 0, 2, 1]], dtype=torch.long)  # 建立边
+x = torch.tensor([[-1], [0], [1]], dtype=torch.float)  # 建立点
+
+data = Data(x=x, edge_index=edge_index)  # 连接数据
+>>> Data(edge_index=[2, 4], x=[3, 1])  # data返回值
+
+data['x']  # 返回节点的值
+data['edge_index']  # 返回边的索引
+data.num_nodes  # 返回节点数
+data.num_edges  # 返回边数
+data.num_node_features  # 返回节点的特征数
+data.is_undirected()  # 返回是否是无向图
+data.shuffle()  # 返回打乱顺序的数据
+data[:540]  # 通过切片划分数据集
+DataLoader(data, batch_size=32, shuffle=True)  # 转化成dataloader类
